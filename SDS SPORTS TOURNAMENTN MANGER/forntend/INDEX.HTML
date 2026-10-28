@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage sports tournaments, teams, matches, and results.">
+    <link rel="stylesheet" href="style.css">
+    <title>Sports Tournament Manager</title>
+</head>
+<body>
+
+    <header>
+        <h1>🏆 Sports Tournament Manager</h1>
+        <p>Manage tournaments, teams, matches, and results in one place.</p>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#tournaments">Tournaments</a>
+        <a href="#teams">Teams</a>
+        <a href="#matches">Matches</a>
+    </nav>
+
+    <main>
+
+        <!-- Dashboard -->
+        <section id="dashboard">
+            <h2>Dashboard</h2>
+            <p>Welcome! Here is your tournament overview.</p>
+
+            <div class="dashboard-cards">
+                <article>
+                    <h3>Total Tournaments</h3>
+                    <p id="total-tournaments">3</p>
+                </article>
+
+                <article>
+                    <h3>Registered Teams</h3>
+                    <p id="total-teams">6</p>
+                </article>
+
+                <article>
+                    <h3>Upcoming Matches</h3>
+                    <p id="upcoming-matches">2</p>
+                </article>
+
+                <article>
+                    <h3>Completed Matches</h3>
+                    <p id="completed-matches">1</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Tournaments -->
+        <section id="tournaments">
+            <h2>Tournaments</h2>
+
+            <form id="tournament-form">
+                <h3>Create a Tournament</h3>
+
+                <label for="tournament-name">Tournament Name</label>
+                <input
+                    type="text"
+                    id="tournament-name"
+                    name="name"
+                    placeholder="Enter tournament name"
+                    maxlength="100"
+                    required
+                >
+
+                <label for="tournament-sport">Sport</label>
+                <select id="tournament-sport" name="sport" required>
+                    <option value="">Select a sport</option>
+                    <option value="Cricket">Cricket</option>
+                    <option value="Football">Football</option>
+                    <option value="Badminton">Badminton</option>
+                    <option value="Basketball">Basketball</option>
+                    <option value="Volleyball">Volleyball</option>
+                </select>
+
+                <label for="tournament-location">Location</label>
+                <input
+                    type="text"
+                    id="tournament-location"
+                    name="location"
+                    placeholder="Enter venue or location"
+                    maxlength="150"
+                    required
+                >
+
+                <label for="start-date">Start Date</label>
+                <input type="date" id="start-date" name="start_date" required>
+
+                <label for="end-date">End Date</label>
+                <input type="date" id="end-date" name="end_date" required>
+
+                <button type="submit">Add Tournament</button>
+            </form>
+
+            <h3>Available Tournaments</h3>
+
+            <div id="tournament-list">
+                <article>
+                    <h4>College Cricket Cup</h4>
+                    <p>Sport: Cricket</p>
+                    <p>Location: College Ground</p>
+                    <p>Status: Planned</p>
+                </article>
+
+                <article>
+                    <h4>Intercollege Football League</h4>
+                    <p>Sport: Football</p>
+                    <p>Location: Main Stadium</p>
+                    <p>Status: Ongoing</p>
+                </article>
+
+                <article>
+                    <h4>Badminton Championship</h4>
+                    <p>Sport: Badminton</p>
+                    <p>Location: Indoor Sports Hall</p>
+                    <p>Status: Planned</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Teams -->
+        <section id="teams">
+            <h2>Teams</h2>
+
+            <form id="team-form">
+                <h3>Register a Team</h3>
+
+                <label for="team-name">Team Name</label>
+                <input
+                    type="text"
+                    id="team-name"
+                    name="name"
+                    placeholder="Enter team name"
+                    maxlength="100"
+                    required
+                >
+
+                <label for="team-tournament">Tournament</label>
+                <select id="team-tournament" name="tournament_id" required>
+                    <option value="">Select a tournament</option>
+                    <option value="1">College Cricket Cup</option>
+                    <option value="2">Intercollege Football League</option>
+                    <option value="3">Badminton Championship</option>
+                </select>
+
+                <label for="captain-name">Captain Name</label>
+                <input
+                    type="text"
+                    id="captain-name"
+                    name="captain_name"
+                    placeholder="Enter captain name"
+                    maxlength="100"
+                    required
+                >
+
+                <label for="team-contact">Contact Details</label>
+                <input
+                    type="text"
+                    id="team-contact"
+                    name="contact"
+                    placeholder="Enter email or phone number"
+                    maxlength="150"
+                    required
+                >
+
+                <button type="submit">Register Team</button>
+            </form>
+
+            <h3>Registered Teams</h3>
+
+            <div id="team-list">
+                <article>
+                    <h4>Thunder Strikers</h4>
+                    <p>Tournament: College Cricket Cup</p>
+                    <p>Captain: Rahul Kumar</p>
+                </article>
+
+                <article>
+                    <h4>Royal Challengers</h4>
+                    <p>Tournament: College Cricket Cup</p>
+                    <p>Captain: Arjun Reddy</p>
+                </article>
+
+                <article>
+                    <h4>Goal Hunters</h4>
+                    <p>Tournament: Intercollege Football League</p>
+                    <p>Captain: Kiran Kumar</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Matches -->
+        <section id="matches">
+            <h2>Matches</h2>
+
+            <form id="match-form">
+                <h3>Schedule a Match</h3>
+
+                <label for="match-tournament">Tournament</label>
+                <select id="match-tournament" name="tournament_id" required>
+                    <option value="">Select a tournament</option>
+                    <option value="1">College Cricket Cup</option>
+                    <option value="2">Intercollege Football League</option>
+                    <option value="3">Badminton Championship</option>
+                </select>
+
+                <label for="team-one">First Team</label>
+                <select id="team-one" name="team1_id" required>
+                    <option value="">Select first team</option>
+                    <option value="1">Thunder Strikers</option>
+                    <option value="2">Royal Challengers</option>
+                    <option value="3">Goal Hunters</option>
+                </select>
+
+                <label for="team-two">Second Team</label>
+                <select id="team-two" name="team2_id" required>
+                    <option value="">Select second team</option>
+                    <option value="1">Thunder Strikers</option>
+                    <option value="2">Royal Challengers</option>
+                    <option value="3">Goal Hunters</option>
+                </select>
+
+                <label for="match-date">Match Date and Time</label>
+                <input
+                    type="datetime-local"
+                    id="match-date"
+                    name="match_date"
+                    required
+                >
+
+                <label for="match-venue">Venue</label>
+                <input
+                    type="text"
+                    id="match-venue"
+                    name="venue"
+                    placeholder="Enter match venue"
+                    maxlength="150"
+                    required
+                >
+
+                <button type="submit">Schedule Match</button>
+            </form>
+
+            <h3>Match Schedule and Results</h3>
+
+            <div id="match-list">
+                <article>
+                    <h4>Thunder Strikers vs Royal Challengers</h4>
+                    <p>Tournament: College Cricket Cup</p>
+                    <p>Date: Sample schedule</p>
+                    <p>Status: Scheduled</p>
+                </article>
+
+                <article>
+                    <h4>Goal Hunters vs Thunder Strikers</h4>
+                    <p>Tournament: Intercollege Football League</p>
+                    <p>Date: Sample schedule</p>
+                    <p>Status: Scheduled</p>
+                </article>
+
+                <article>
+                    <h4>Royal Challengers vs Thunder Strikers</h4>
+                    <p>Tournament: College Cricket Cup</p>
+                    <p>Result: 120 - 110</p>
+                    <p>Status: Completed</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Message area for future JavaScript interactions -->
+        <div id="message" role="status" aria-live="polite"></div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sports Tournament Manager</p>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>
